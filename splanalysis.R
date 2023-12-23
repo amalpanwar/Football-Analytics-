@@ -719,8 +719,8 @@ SPL_test <- subset(SPL_recent,Season %in% c( '2022-2023'))
 team <- as.data.frame (unique(SPL_test$Team))
 head(SPL_train)
 ### Fitting model###################################
-train_fit <- glm(Goals ~ HomeTeam + Team_AttackStrength + Opponent_DefenceWeekness +I(Opponent_DefenceWeekness * Team_AttackStrength)
-                      +ShotOnTarg + Corner,  family=poisson(link=log), data=SPL_train)
+train_fit <- glm(Goals ~ HomeTeam + Team_AttackStrength + Opponent_DefenceWeekness +I(Team_AttackStrength^2)
+                      +ShotOnTarg + I(Corner * ShotOnTarg),  family=poisson(link=log), data=SPL_train)
 summary(train_fit)
 ###Feature importance###################
 vip(train_fit)

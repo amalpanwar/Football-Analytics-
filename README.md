@@ -9,3 +9,6 @@ Also it will the predict the goal over test data for both home and away team and
 ####Result#####
 
 ## It seems prediction of Draw matches is higher because of the teams strength and weakness are too close. However if FTR result calculated  directly by the probability it might change.
+
+## Final Results for future Match prediction with odds##
+FinalReslut8_with_ODDs.csv containing future results draw by leveraging last 4 seasons of SPL.
